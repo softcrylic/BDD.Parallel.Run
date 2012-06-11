@@ -27,6 +27,7 @@ public class SearchStepDefinitions {
 
     @Before
     public void prepare() throws MalformedURLException {
+    	
     	 //For local machine
     	 String url = "http://localhost:4444/wd/hub";
     	 //For Saucelabs
@@ -34,20 +35,20 @@ public class SearchStepDefinitions {
     	 System.out.println("Running at: "+url);
     	 //Switch browsers
     	 //For chrome
-    	 DesiredCapabilities capabillities = DesiredCapabilities.chrome();
+    	 //DesiredCapabilities capabillities = DesiredCapabilities.chrome();
     	 //For firefox
-    	 //DesiredCapabilities capabillities = DesiredCapabilities.firefox();
+    	 DesiredCapabilities capabillities = DesiredCapabilities.firefox();
     	 //if(url.contains("saucelabs")) 
-         //capabillities.setCapability("version", "11");
+         capabillities.setCapability("version", "11");
     	 //else
     	 //capabillities.setCapability("version", "12.0"); //Change the browser version here if running on local machine
     	 //For Windows XP
-         capabillities.setCapability("platform", Platform.XP);
+         //capabillities.setCapability("platform", Platform.XP);
          //For MAC
-         //capabillities.setCapability("platform", Platform.MAC);
+         capabillities.setCapability("platform", Platform.MAC);
          
-         capabillities.setCapability("name", "Running via Jenkins. Testing on Sauce");
-         capabillities.setCapability("record-video", false);
+         //capabillities.setCapability("name", "Running via Jenkins. Testing on Sauce");
+         //capabillities.setCapability("record-video", false);
 
          this.driver = new RemoteWebDriver(
         		 new URL(url),
