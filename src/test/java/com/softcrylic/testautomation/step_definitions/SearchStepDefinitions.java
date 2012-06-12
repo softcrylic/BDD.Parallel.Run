@@ -35,11 +35,11 @@ public class SearchStepDefinitions {
     	 System.out.println("Running at: "+url);
     	 //Switch browsers
     	 //For chrome
-    	 //DesiredCapabilities capabillities = DesiredCapabilities.chrome();
+    	 DesiredCapabilities capabillities = DesiredCapabilities.chrome();
     	 //For firefox
-    	 DesiredCapabilities capabillities = DesiredCapabilities.firefox();
+    	 //DesiredCapabilities capabillities = DesiredCapabilities.firefox();
     	 //if(url.contains("saucelabs")) 
-         capabillities.setCapability("version", "11");
+         //capabillities.setCapability("version", "11");
     	 //else
     	 //capabillities.setCapability("version", "12.0"); //Change the browser version here if running on local machine
     	 //For Windows XP

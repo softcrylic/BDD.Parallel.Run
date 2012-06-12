@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class HomePage {
-	
     private WebDriver driver; 
 
     public HomePage(WebDriver driver) {

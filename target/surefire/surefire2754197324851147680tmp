@@ -1,5 +1,5 @@
 #surefire
-#Mon Jun 11 09:36:49 EDT 2012
+#Tue Jun 12 06:59:22 EDT 2012
 parallel=classes
 enableAssertions=true
 testSuiteDefinitionTestSourceDirectory=/Users/sundarsritharan/git/BDD.Parallel.Run/src/test/java
