@@ -27,15 +27,37 @@ public class SearchStepDefinitions {
 
     @Before
     public void prepare() throws MalformedURLException {
+    
     	
-    	 //For local machine
-    	 String url = "http://localhost:4444/wd/hub";
-    	 //For Saucelabs
-    	 //replace above URL ("http://localhost:4444/wd/hub") with Saucelabs URL
-    	 System.out.println("Running at: "+url);
-    	 //Switch browsers
-    	 //For chrome
-    	 DesiredCapabilities capabillities = DesiredCapabilities.chrome();
+    	String url = "";
+    	
+    	/* REMOTE FIREFOX DRIVER CONFIG FOR RUNNING TESTS IN LOCAL GRID AND JENKINS 
+    	url = "http://localhost:4444/wd/hub";
+    	DesiredCapabilities capabillities = DesiredCapabilities.firefox();
+    	//DesiredCapabilities capabillities = DesiredCapabilities.chrome();
+    	capabillities.setCapability("platform", Platform.MAC);
+    	capabillities.setCapability("version", "11");
+    	this.driver = new RemoteWebDriver(new URL(url), capabillities);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
+        */
+        
+    	
+    	/// REMOTE DRIVER CONFIG FOR RUNNING TESTS IN SAUCE LABS 
+    	url = "http://softcrylic:57b9b4bd-8d14-482e-a600-3b1262ff2710@ondemand.saucelabs.com:80/wd/hub";
+    	System.out.println("Running at: "+url);
+    	DesiredCapabilities capabillities = DesiredCapabilities.chrome();
+    	capabillities.setCapability("platform", Platform.MAC);
+        capabillities.setCapability("name", "Search Feature");
+        this.driver = new RemoteWebDriver(new URL(url),capabillities);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        capabillities.setCapability("record-video", false);
+    	 
+   
+    	//capabillities.setCapability("name", "Running via Jenkins. Testing on Sauce");
+    	//if(url.contains("saucelabs")) 
+        // capabillities.setCapability("version", "11");
+    	// else
+    	// capabillities.setCapability("version", "12.0");	
     	 //For firefox
     	 //DesiredCapabilities capabillities = DesiredCapabilities.firefox();
     	 //if(url.contains("saucelabs")) 
@@ -45,15 +67,7 @@ public class SearchStepDefinitions {
     	 //For Windows XP
          //capabillities.setCapability("platform", Platform.XP);
          //For MAC
-         capabillities.setCapability("platform", Platform.MAC);
-         
-         //capabillities.setCapability("name", "Running via Jenkins. Testing on Sauce");
-         //capabillities.setCapability("record-video", false);
-
-         this.driver = new RemoteWebDriver(
-        		 new URL(url),
-            capabillities);
-         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        
     }
 
     @After

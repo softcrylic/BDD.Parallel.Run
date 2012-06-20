@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri('/Users/sundarsritharan/git/BDD.Parallel.Run/src/test/resources/com/softcrylic/testautomation/feature/newyork.feature');
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri('/Users/sundarsritharan/git/BDD.Parallel.Run/src/test/resources/com/softcrylic/testautomation/feature/stock.feature');
 formatter.feature({
   "id": "it-should-be-possible-to-search-for-places-at-the-norwegian-meteorological-institute,-http://www.yr.no",
   "description": "",
@@ -7,9 +7,9 @@ formatter.feature({
   "line": 1
 });
 formatter.scenario({
-  "id": "it-should-be-possible-to-search-for-places-at-the-norwegian-meteorological-institute,-http://www.yr.no;locate-new-york",
+  "id": "it-should-be-possible-to-search-for-places-at-the-norwegian-meteorological-institute,-http://www.yr.no;locate-stockholm",
   "description": "",
-  "name": "Locate New York",
+  "name": "Locate Stockholm",
   "keyword": "Scenario",
   "line": 3,
   "type": "scenario"
@@ -20,12 +20,12 @@ formatter.step({
   "line": 5
 });
 formatter.step({
-  "name": "I search for New York",
+  "name": "I search for Stockholm",
   "keyword": "When ",
   "line": 6
 });
 formatter.step({
-  "name": "I should be able to get a weather forecast for New York",
+  "name": "I should be able to get a weather forecast for Stockholm",
   "keyword": "Then ",
   "line": 7
 });
@@ -33,34 +33,33 @@ formatter.match({
   "location": "SearchStepDefinitions.prepareHomePage()"
 });
 formatter.result({
-  "duration": 7045916000,
+  "duration": 24200277000,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "New York",
+      "val": "Stockholm",
       "offset": 13
     }
   ],
   "location": "SearchStepDefinitions.search(String)"
 });
 formatter.result({
-  "duration": 5848105000,
+  "duration": 8506589000,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "New York",
+      "val": "Stockholm",
       "offset": 47
     }
   ],
   "location": "SearchStepDefinitions.assertTheSearchResult(String)"
 });
 formatter.result({
-  "duration": 2925063000,
+  "duration": 8667614000,
   "status": "passed"
-});
 });
 });
