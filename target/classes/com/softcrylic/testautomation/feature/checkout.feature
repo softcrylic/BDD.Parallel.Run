@@ -10,6 +10,7 @@ Background:
 	When User click continue checkout button
 	Then Sign in page should load
 
+@Guest
 Scenario: Checkout as Guest User
 
 	When User entered email "ssta123@gmail.com"
